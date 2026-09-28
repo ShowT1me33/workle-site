@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Работа без опыта | Ежедневные выплаты</title>
+    <title>Работа курьером | Ежедневные выплаты</title>
     <style>
         :root {
             --primary: #FFD600;
@@ -16,116 +16,170 @@
             --accent: #FF6B35;
             --shadow: 0 4px 20px rgba(0,0,0,0.08);
             --shadow-hover: 0 12px 40px rgba(0,0,0,0.15);
-            
         }
-        .partner-text-logo {
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    transition: 0.3s;
-    cursor: pointer;
-    filter: grayscale(100%) opacity(0.6);
-}
-.partner-text-logo:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.1);
-}
+        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: var(--light); color: var(--text); line-height: 1.6; }
 
         /* ===== HEADER ===== */
-        header {
-            background: var(--light);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .header {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        
-        .logo-container { display: flex; align-items: center; gap: 0.8rem; }
-        .logo-container img { height: 40px; width: auto; }
-        .logo-slogan { font-size: 0.75rem; color: var(--gray-dark); margin-top: 0.2rem; }
-        
-        .city-selector {
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 5%;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .header-logo-text {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--gray-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--dark);
+        }
+
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .city-select {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
             cursor: pointer;
             padding: 0.5rem 1rem;
             border-radius: 8px;
-            transition: 0.2s;
-            position: relative;
+            transition: background 0.2s;
         }
-        .city-selector:hover { background: var(--gray); }
-        .city-selector strong { color: var(--dark); font-size: 1rem; }
-        
-        .city-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: var(--shadow-hover);
-            padding: 0.5rem;
-            min-width: 200px;
-            margin-top: 0.5rem;
+
+        .city-select:hover {
+            background: var(--gray);
         }
-        .city-dropdown.active { display: block; }
-        .city-dropdown div {
-            padding: 0.7rem 1rem;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: 0.2s;
+
+        .city-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
         }
-        .city-dropdown div:hover { background: var(--gray); }
-        
-        .header-contact {
+
+        .header-btn {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            background: var(--success);
+            color: white;
+            padding: 0.7rem 1.3rem;
+            border-radius: 10px;
             text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            transition: 0.2s;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
         }
-        .header-contact:hover { background: var(--gray); }
-        .header-contact svg { width: 20px; height: 20px; }
+
+        .header-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 160, 56, 0.3);
+        }
 
         /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 5rem 5% 4rem;
-            text-align: center;
+            position: relative;
             min-height: 70vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow: hidden;
         }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
         .hero h1 {
             font-size: clamp(2.2rem, 5vw, 3.8rem);
             font-weight: 900;
-            color: var(--dark);
+            color: white;
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            max-width: 900px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
+
         .hero-subtitle {
             font-size: 1.3rem;
-            color: var(--gray-dark);
-            max-width: 700px;
+            color: white;
             margin-bottom: 2.5rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
+
         .trust-badges {
             display: flex;
             gap: 2rem;
@@ -133,14 +187,17 @@
             justify-content: center;
             margin-bottom: 3rem;
         }
+
         .trust-badge {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 1rem;
-            color: var(--dark);
+            color: white;
             font-weight: 600;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
+
         .cta-main {
             background: var(--accent);
             color: white;
@@ -155,51 +212,116 @@
             cursor: pointer;
             box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
         }
-        .cta-main:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4); }
+
+        .cta-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+        }
 
         /* ===== PARTNERS ===== */
         .partners {
-            padding: 3rem 5%;
+            padding: 5rem 5%;
             background: var(--light);
             text-align: center;
         }
+
         .partners h3 {
-            font-size: 1.1rem;
-            color: var(--gray-dark);
-            margin-bottom: 2rem;
-            font-weight: 500;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 3rem;
+            font-weight: 700;
         }
+
         .partners-grid {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            max-width: 1200px;
+            gap: 2rem;
+            max-width: 900px;
             margin: 0 auto;
         }
-        .partner-logo {
-            height: 50px;
-            filter: grayscale(100%) opacity(0.5);
-            transition: 0.3s;
-            cursor: pointer;
+
+        .partners-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
-        .partner-logo:hover {
+
+        .partner-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            cursor: pointer;
+            filter: grayscale(100%) opacity(0.5);
+        }
+
+        .partner-circle:hover {
             filter: grayscale(0%) opacity(1);
             transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .partner-circle img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .partner-text {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--dark);
         }
 
         /* ===== STEPS ===== */
         .steps {
+            position: relative;
             padding: 5rem 5%;
             background: var(--gray);
             text-align: center;
+            overflow: hidden;
         }
+
+        .steps-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/steps-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .steps-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(245, 245, 245, 0.85);
+            z-index: 1;
+        }
+
+        .steps-content {
+            position: relative;
+            z-index: 2;
+        }
+
         .steps h2 {
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: var(--dark);
         }
+
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -207,6 +329,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+
         .step-card {
             background: white;
             padding: 2.5rem 2rem;
@@ -214,92 +337,197 @@
             box-shadow: var(--shadow);
             transition: 0.3s;
         }
-        .step-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-        .step-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .step-card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--dark); }
-        .step-card p { color: var(--gray-dark); font-size: 1rem; }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .step-card p {
+            color: var(--gray-dark);
+            font-size: 1rem;
+        }
 
         /* ===== VACANCIES ===== */
         .vacancies {
             padding: 5rem 5%;
             background: var(--light);
         }
+
         .vacancies h2 {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             color: var(--dark);
         }
-        .cards {
+
+        .vacancies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .card {
+
+        .vacancy-card {
             background: white;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: 0.3s;
-            display: flex;
-            flex-direction: column;
         }
-        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-        .card-head {
-            height: 120px;
+
+        .vacancy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .vacancy-banner {
+            width: 100%;
+            height: 250px;
+            background: var(--gray);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem;
+            overflow: hidden;
         }
-        .card-head img { max-height: 60px; max-width: 100%; }
-        .card-body { padding: 2rem; flex-grow: 1; }
-        .card-body h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--dark); }
-        .salary {
-            color: var(--success);
-            font-weight: 900;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            display: block;
+
+        .vacancy-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .tag {
-            background: var(--gray);
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        .card-btn {
+
+        .vacancy-btn {
             display: block;
             width: 100%;
-            padding: 1rem;
+            padding: 1.2rem;
             text-align: center;
             background: var(--dark);
             color: white;
             text-decoration: none;
             font-weight: 700;
-            border-radius: 0 0 20px 20px;
+            font-size: 1rem;
             transition: 0.2s;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
         }
-        .card-btn:hover { background: var(--accent); }
+
+        .vacancy-btn:hover {
+            background: var(--accent);
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 5rem 5%;
+            background: var(--gray);
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark);
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--gray);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray-dark);
+            line-height: 1.8;
+        }
+
+        .faq-answer-content ul,
+        .faq-answer-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-answer-content strong {
+            color: var(--dark);
+        }
+
+        .faq-answer-content a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .faq-answer-content a:hover {
+            text-decoration: underline;
+        }
 
         /* ===== FORM ===== */
         .form-section {
             padding: 5rem 5%;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
+
         .form-wrap {
             max-width: 600px;
             margin: 0 auto;
@@ -308,19 +536,25 @@
             border-radius: 24px;
             box-shadow: var(--shadow-hover);
         }
+
         .form-wrap h2 {
             text-align: center;
             font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--dark);
         }
+
         .form-wrap > p {
             text-align: center;
             color: var(--gray-dark);
             margin-bottom: 2.5rem;
             font-size: 1rem;
         }
-        .field { margin-bottom: 1.5rem; }
+
+        .field {
+            margin-bottom: 1.5rem;
+        }
+
         .field label {
             display: block;
             margin-bottom: 0.5rem;
@@ -328,6 +562,7 @@
             font-size: 0.95rem;
             color: var(--dark);
         }
+
         .field input {
             width: 100%;
             padding: 1rem 1.2rem;
@@ -337,9 +572,16 @@
             transition: 0.2s;
             background: white;
         }
-        .field input:focus { border-color: var(--accent); outline: none; }
-        
-        .city-field { position: relative; }
+
+        .field input:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .city-field {
+            position: relative;
+        }
+
         .city-change {
             position: absolute;
             right: 1rem;
@@ -349,15 +591,21 @@
             font-size: 0.85rem;
             cursor: pointer;
             text-decoration: underline;
+            font-weight: 600;
         }
-        
-        .chips-label { margin-bottom: 1rem; font-weight: 700; }
+
+        .chips-label {
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
         .chips {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
             margin-bottom: 1.5rem;
         }
+
         .chip {
             padding: 0.8rem 1.5rem;
             border: 2px solid #e5e7eb;
@@ -368,13 +616,17 @@
             background: white;
             font-size: 0.95rem;
         }
-        .chip:hover { border-color: var(--accent); }
+
+        .chip:hover {
+            border-color: var(--accent);
+        }
+
         .chip.active {
             background: var(--accent);
             color: white;
             border-color: var(--accent);
         }
-        
+
         .submit-btn {
             width: 100%;
             padding: 1.3rem;
@@ -388,9 +640,19 @@
             transition: 0.2s;
             margin-top: 1rem;
         }
-        .submit-btn:hover { background: #1b862e; transform: translateY(-2px); }
-        .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
-        
+
+        .submit-btn:hover {
+            background: #1b862e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(33, 160, 56, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         .form-disclaimer {
             text-align: center;
             font-size: 0.8rem;
@@ -405,7 +667,12 @@
             padding: 3rem 5% 2rem;
             text-align: center;
         }
-        footer p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
         .footer-disclaimer {
             font-size: 0.75rem;
             color: #6B7280;
@@ -414,6 +681,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .footer-links {
             margin-top: 1.5rem;
             display: flex;
@@ -421,203 +689,375 @@
             gap: 2rem;
             flex-wrap: wrap;
         }
+
         .footer-links a {
             color: #9CA3AF;
             text-decoration: none;
             font-size: 0.9rem;
             transition: 0.2s;
         }
-        .footer-links a:hover { color: white; }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .modal h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .modal-search {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-search:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .city-list {
+            list-style: none;
+        }
+
+        .city-list li {
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .city-list li:hover {
+            background: var(--gray);
+        }
+
+        .city-list li.active {
+            background: var(--accent);
+            color: white;
+            font-weight: 700;
+        }
 
         /* ===== MOBILE ===== */
         @media (max-width: 768px) {
-            header { flex-wrap: wrap; gap: 1rem; justify-content: center; }
-            .hero { padding: 3rem 5%; min-height: auto; }
-            .hero h1 { font-size: 2rem; }
-            .trust-badges { flex-direction: column; gap: 1rem; }
-            .steps h2, .vacancies h2 { font-size: 2rem; }
-            .form-wrap { padding: 2rem 1.5rem; }
-            .partners-grid { gap: 1.5rem; }
+            .header-container {
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 0.6rem 5%;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+            
+            .header-contacts {
+                gap: 1rem;
+            }
+            
+            .header-logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .city-name {
+                display: none;
+            }
+
+            .hero {
+                padding: 3rem 5%;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .steps h2, .vacancies h2, .faq h2 {
+                font-size: 2rem;
+            }
+
+            .form-wrap {
+                padding: 2rem 1.5rem;
+            }
+
+            .partners-row {
+                gap: 1.5rem;
+            }
+
+            .partner-circle {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- HEADER -->
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Workle.Pro">
-            <div>
-                <div style="font-weight: 800; font-size: 1.2rem; color: var(--dark);">Workle.Pro</div>
-                <div class="logo-slogan">Сервис подбора работы</div>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <svg width="40" height="40" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,75 L60,20 L50,70 L90,70 L40,130 L55,75 L10,75 Z" fill="#FFD600"/>
+                    <path d="M70,30 L120,75 L70,120 L70,90 L90,75 L70,60 Z" fill="#1A1A1A"/>
+                </svg>
+                <span class="header-logo-text">Workle.Pro</span>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="#partners">Партнеры</a>
+                <a href="#steps">Как начать</a>
+                <a href="#vacancies">Актуальные предложения</a>
+            </nav>
+            
+            <div class="header-contacts">
+                <div class="city-select" id="citySelect">
+                    <span>📍</span>
+                    <span class="city-name" id="currentCity">Москва</span>
+                </div>
+                <a href="https://t.me/+6276623190" class="header-btn" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.099.154.232.17.325.015.093.034.305.019.471z"/>
+                    </svg>
+                    Связаться с куратором
+                </a>
             </div>
         </div>
-        
-        <div class="city-selector" id="citySelector">
-            <span>📍</span>
-            <strong id="currentCity">Москва</strong>
-            <div class="city-dropdown" id="cityDropdown">
-                <div data-city="Москва">Москва</div>
-                <div data-city="Санкт-Петербург">Санкт-Петербург</div>
-                <div data-city="Казань">Казань</div>
-                <div data-city="Екатеринбург">Екатеринбург</div>
-                <div data-city="Новосибирск">Новосибирск</div>
-                <div data-city="Краснодар">Краснодар</div>
-                <div data-city="Нижний Новгород">Нижний Новгород</div>
-                <div data-city="Ростов-на-Дону">Ростов-на-Дону</div>
-                <div data-city="Самара">Самара</div>
-                <div data-city="Уфа">Уфа</div>
-            </div>
-        </div>
-        
-        <a href="https://t.me/+6276623190" class="header-contact" target="_blank">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.099.154.232.17.325.015.093.034.305.019.471z"/></svg>
-            Написать в поддержку
-        </a>
     </header>
 
     <!-- HERO -->
     <section class="hero">
-        <h1>Работа без опыта с оплатой на следующий день</h1>
-        <p class="hero-subtitle">Подберем вакансию рядом с твоим домом в 📍 <span id="heroCity">Москва</span>. Оформление за 15 минут с официальными партнерами.</p>
-        
-        <div class="trust-badges">
-            <div class="trust-badge">✅ Ежедневные выплаты</div>
-            <div class="trust-badge">✅ Бесплатное обучение</div>
-            <div class="trust-badge">✅ Быстрое и официальное трудоустройство</div>
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Работа без опыта с оплатой на следующий день</h1>
+            <p class="hero-subtitle">Подберем вакансию рядом с вашим домом. Оформление за 15 минут с официальными партнерами.</p>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">✅ Ежедневные выплаты</div>
+                <div class="trust-badge">✅ Бесплатное обучение</div>
+                <div class="trust-badge">✅ Быстрое и официальное трудоустройство</div>
+            </div>
+            
+            <a href="#form" class="cta-main">Подобрать вакансию</a>
         </div>
-        
-        <a href="#form" class="cta-main">👉 Подобрать вакансию</a>
     </section>
 
     <!-- PARTNERS -->
-    <section class="partners">
+    <section id="partners" class="partners">
         <h3>Официально сотрудничаем с лидерами рынка:</h3>
         <div class="partners-grid">
-    <div class="partner-text-logo" style="background: #FC3F1D; color: white;">Яндекс Еда</div>
-    <div class="partner-text-logo" style="background: #00A550; color: white;">Самокат</div>
-    <div class="partner-text-logo" style="background: #FFCC00; color: black;">Яндекс Маркет</div>
-    <div class="partner-text-logo" style="background: #005BFF; color: white;">Купер</div>
-    <div class="partner-text-logo" style="background: #21A038; color: white;">СберМаркет</div>
-    <div class="partner-text-logo" style="background: #005BFF; color: white;">Ozon</div>
-    <div class="partner-text-logo" style="background: #E30613; color: white;">Магнит</div>
+            <div class="partners-row">
+                <div class="partner-circle">
+                    <span class="partner-text">Яндекс Лавка</span>
+                </div>
+                <div class="partner-circle">
+                    <span class="partner-text">Яндекс Еда</span>
+                </div>
+                <div class="partner-circle">
+                    <span class="partner-text">OZON</span>
+                </div>
+            </div>
+            <div class="partners-row">
+                <div class="partner-circle">
+                    <span class="partner-text">Купер</span>
+                </div>
+                <div class="partner-circle">
+                    <span class="partner-text">Магнит</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- STEPS -->
-    <section class="steps">
-        <h2>Начни зарабатывать за 3 шага</h2>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-icon">📝</div>
-                <h3>Оставь заявку</h3>
-                <p>Это займет 2 минуты. Укажи город и удобный формат работы.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-icon">🤝</div>
-                <h3>Получи одобрение</h3>
-                <p>Мы свяжемся в Telegram за 15 минут и подберем лучший тариф под твой район.</p>
-            </div>
-            <div class="step-card">
-                <div class="step-icon">🚀</div>
-                <h3>Выходи на слот</h3>
-                <p>Пройди короткое обучение и получи первые деньги уже завтра.</p>
+    <section id="steps" class="steps">
+        <div class="steps-bg"></div>
+        <div class="steps-overlay"></div>
+        <div class="steps-content">
+            <h2>Начните зарабатывать за 3 шага</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">📝</div>
+                    <h3>Оставьте заявку</h3>
+                    <p>Это займет 2 минуты. Укажите город и удобный формат работы.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🤝</div>
+                    <h3>Получите одобрение</h3>
+                    <p>Мы свяжемся с вами в Telegram за 15 минут и подберем лучший тариф под ваш район.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🚀</div>
+                    <h3>Выходите на слот</h3>
+                    <p>Пройдите короткое обучение и получите первые деньги уже завтра.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- VACANCIES -->
-    <section class="vacancies">
+    <section id="vacancies" class="vacancies">
         <h2>Актуальные предложения</h2>
-        <div class="cards">
-            
-            <div class="card">
-                <div class="card-head">
-                    <img src="images/yandex-logo.png" alt="Яндекс Еда">
+        <div class="vacancies-grid">
+            <div class="vacancy-card">
+                <div class="vacancy-banner">
+                    <!-- Замените на ваш баннер: <img src="images/banner1.jpg" alt="Яндекс Еда"> -->
+                    <span style="color: var(--gray-dark);">Баннер 1</span>
                 </div>
-                <div class="card-body">
-                    <h3>Курьер доставки</h3>
-                    <span class="salary">До 120 000 ₽ / мес</span>
-                    <div class="tags">
-                        <span class="tag"> Пеший</span>
-                        <span class="tag">🚴 Вело</span>
-                        <span class="tag">💵 Выплаты каждый день</span>
+                <a href="#" class="vacancy-btn">Оформить заявку</a>
+            </div>
+            <div class="vacancy-card">
+                <div class="vacancy-banner">
+                    <!-- Замените на ваш баннер: <img src="images/banner2.jpg" alt="Купер"> -->
+                    <span style="color: var(--gray-dark);">Баннер 2</span>
+                </div>
+                <a href="#" class="vacancy-btn">Оформить заявку</a>
+            </div>
+            <div class="vacancy-card">
+                <div class="vacancy-banner">
+                    <!-- Замените на ваш баннер: <img src="images/banner3.jpg" alt="Ozon"> -->
+                    <span style="color: var(--gray-dark);">Баннер 3</span>
+                </div>
+                <a href="#" class="vacancy-btn">Оформить заявку</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2>Часто задаваемые вопросы</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Что мне понадобится?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <ul>
+                            <li><strong>Самозанятость.</strong> Мы поможем с оформлением — вам никуда не придётся идти. Вся процедура пройдёт онлайн. Все выплаты будут приходить на карту уже за вычетом налогов.</li>
+                            <li><strong>Медицинская книжка (ЛМК).</strong> Компенсация медицинской книжки не предусмотрена, но мы даем отсрочку до 10 дней, чтобы вы смогли её оформить.</li>
+                        </ul>
                     </div>
                 </div>
-                <a href="#form" class="card-btn">Откликнуться</a>
             </div>
-
-            <div class="card">
-                <div class="card-head">
-                    <img src="images/kupe-logo.png" alt="Купер">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Как получить статус самозанятого?</span>
+                    <span class="faq-icon">+</span>
                 </div>
-                <div class="card-body">
-                    <h3>Сборщик / Курьер</h3>
-                    <span class="salary">До 100 000 ₽ / мес</span>
-                    <div class="tags">
-                        <span class="tag"> Работа рядом с домом</span>
-                        <span class="tag">📦 Фиксированная ставка</span>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Это можно сделать полностью онлайн за 5 минут. Выберите удобный способ:</p>
+                        <ol>
+                            <li><strong>Через приложение «Мой налог»</strong> (самый быстрый способ). Скачать можно по ссылке: <a href="https://npd.nalog.ru/app/" target="_blank">npd.nalog.ru/app/</a>. Регистрация возможна по паспорту, через ИНН или Госуслуги.</li>
+                            <li><strong>Через сайт ФНС:</strong> перейдите на <a href="https://lknpd.nalog.ru" target="_blank">lknpd.nalog.ru</a> (нужен ИНН или учетная запись Госуслуг).</li>
+                            <li><strong>Через Госуслуги:</strong> найдите услугу «Регистрация в качестве самозанятого» (нужна подтвержденная учетная запись).</li>
+                            <li><strong>Через банки:</strong> многие банки (Сбер, Тинькофф, Альфа и др.) позволяют стать самозанятым прямо в их приложении. <a href="https://npd.nalog.ru/credit-orgs/" target="_blank">Список банков здесь</a>.</li>
+                        </ol>
+                        <p>Больше информации в базе знаний ФНС: <a href="https://npd.nalog.ru/faq/" target="_blank">npd.nalog.ru/faq/</a></p>
                     </div>
                 </div>
-                <a href="#form" class="card-btn">Откликнуться</a>
             </div>
-
-            <div class="card">
-                <div class="card-head">
-                    <img src="images/ozon-logo.png" alt="Ozon">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Можно ли выбрать точку рядом с домом?</span>
+                    <span class="faq-icon">+</span>
                 </div>
-                <div class="card-body">
-                    <h3>Сборщик заказов</h3>
-                    <span class="salary">До 90 000 ₽ / мес</span>
-                    <div class="tags">
-                        <span class="tag">🌡️ Теплый склад</span>
-                        <span class="tag">📄 Официальное оформление</span>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Да, абсолютно. Вы сами указываете удобный вам район или адрес, и мы подберем вакансии именно там.</p>
                     </div>
                 </div>
-                <a href="#form" class="card-btn">Откликнуться</a>
             </div>
-
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Я могу сам выбирать своё расписание?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <p>Да, вы полностью свободны в выборе. Можно работать несколько часов в день, только по выходным или брать полные смены — график вы строите самостоятельно.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- FORM -->
     <section id="form" class="form-section">
         <div class="form-wrap">
-            <h2>Получи подборку вакансий под свой район</h2>
-            <p>Это бесплатно и ни к чему не обязывает. Мы напишем в Telegram в течение 15 минут.</p>
+            <h2>Получите подборку вакансий под ваш район</h2>
+            <p>Это бесплатно и ни к чему не обязывает. Мы свяжемся с вами в течение 15 минут.</p>
             
             <form id="leadForm">
-                <!-- Honeypot для ботов -->
                 <input type="text" id="honeypot" name="website" style="display:none" tabindex="-1" autocomplete="off">
                 
                 <div class="field">
-                    <label>Имя</label>
-                    <input type="text" id="name" required placeholder="Как к тебе обращаться?">
+                    <label>Ваше имя</label>
+                    <input type="text" id="name" required placeholder="Иван">
                 </div>
                 
                 <div class="field">
-                    <label>Связь</label>
-                    <input type="tel" id="phone" required placeholder="Телефон или Telegram">
+                    <label>Телефон</label>
+                    <input type="tel" id="phone" required placeholder="+7 (___) ___-__-__">
                 </div>
                 
                 <div class="field city-field">
                     <label>Город</label>
-                    <input type="text" id="city" required placeholder="Город" value="Москва">
-                    <span class="city-change" onclick="document.getElementById('citySelector').click()">Изменить</span>
+                    <input type="text" id="city" required placeholder="Москва" value="Москва" readonly>
+                    <span class="city-change" id="cityChangeBtn">Изменить</span>
                 </div>
                 
                 <div class="field">
-                    <label class="chips-label">Кем хочешь работать?</label>
+                    <label class="chips-label">Предпочитаемый формат работы</label>
                     <div class="chips">
-                        <div class="chip" data-value="Пеший">🚶 Пеший</div>
+                        <div class="chip active" data-value="Пеший">🚶 Пеший</div>
                         <div class="chip" data-value="Вело">🚴 Вело</div>
-                        <div class="chip" data-value="Авто">🚗 Авто</div>
+                        <div class="chip" data-value="Авто"> Авто</div>
                         <div class="chip" data-value="Сборщик">📦 Сборщик</div>
                     </div>
                     <input type="hidden" id="type" value="Пеший">
                 </div>
                 
-                <button type="submit" class="submit-btn" id="btn">🚀 Получить подборку в Telegram</button>
+                <button type="submit" class="submit-btn" id="btn">Получить подборку вакансий</button>
                 <p class="form-disclaimer">🔒 Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
             </form>
         </div>
@@ -633,45 +1073,98 @@
         </div>
     </footer>
 
+    <!-- CITY MODAL -->
+    <div class="modal-overlay" id="cityModal">
+        <div class="modal">
+            <h3>Выберите ваш город</h3>
+            <input type="text" class="modal-search" id="citySearch" placeholder="Найти город...">
+            <ul class="city-list" id="cityList"></ul>
+        </div>
+    </div>
+
     <script>
         // === НАСТРОЙКИ ===
         const WORKER_URL = "https://delivery-bottest.showt1me0107rrr.workers.dev"; 
         const formOpenTime = Date.now();
 
+        // Список городов
+        const cities = [
+            "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань",
+            "Нижний Новгород", "Челябинск", "Самара", "Омск", "Ростов-на-Дону",
+            "Уфа", "Красноярск", "Пермь", "Воронеж", "Волгоград",
+            "Краснодар", "Саратов", "Тюмень", "Тольятти", "Ижевск",
+            "Барнаул", "Ульяновск", "Иркутск", "Хабаровск", "Ярославль",
+            "Владивосток", "Махачкала", "Томск", "Оренбург", "Кемерово",
+            "Новокузнецк", "Рязань", "Набережные Челны", "Астрахань", "Пенза",
+            "Липецк", "Киров", "Чебоксары", "Тула", "Калининград",
+            "Курск", "Ставрополь", "Улан-Удэ", "Тверь", "Магнитогорск",
+            "Сочи", "Иваново", "Брянск", "Белгород", "Сургут",
+            "Владимир", "Архангельск", "Калуга", "Смоленск", "Чита",
+            "Саранск", "Курган", "Вологда", "Орёл", "Якутск",
+            "Мурманск", "Тамбов", "Грозный", "Стерлитамак", "Кострома",
+            "Петрозаводск", "Нижневартовск", "Новороссийск", "Йошкар-Ола", "Сыктывкар",
+            "Нальчик", "Шахты", "Дзержинск", "Орск", "Братск",
+            "Ангарск", "Старый Оскол", "Великий Новгород", "Псков", "Бийск",
+            "Прокопьевск", "Химки", "Балашиха", "Королёв", "Мытищи"
+        ];
+
         // Автоопределение города
         fetch('https://ipapi.co/json/')
             .then(r => r.json())
             .then(d => {
-                if(d.city) {
+                if(d.city && cities.includes(d.city)) {
                     document.getElementById('currentCity').textContent = d.city;
-                    document.getElementById('heroCity').textContent = d.city;
                     document.getElementById('city').value = d.city;
                 }
             })
             .catch(() => console.log('Geo error'));
 
-        // Переключение города
-        const citySelector = document.getElementById('citySelector');
-        const cityDropdown = document.getElementById('cityDropdown');
-        
-        citySelector.addEventListener('click', (e) => {
-            e.stopPropagation();
-            cityDropdown.classList.toggle('active');
-        });
-        
-        document.querySelectorAll('.city-dropdown div').forEach(div => {
-            div.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const city = div.dataset.city;
-                document.getElementById('currentCity').textContent = city;
-                document.getElementById('heroCity').textContent = city;
-                document.getElementById('city').value = city;
-                cityDropdown.classList.remove('active');
+        // Модальное окно выбора города
+        const cityModal = document.getElementById('cityModal');
+        const cityList = document.getElementById('cityList');
+        const citySearch = document.getElementById('citySearch');
+        let currentCityValue = document.getElementById('city').value;
+
+        function renderCities(filter = '') {
+            cityList.innerHTML = '';
+            const filtered = cities.filter(c => c.toLowerCase().includes(filter.toLowerCase()));
+            filtered.forEach(city => {
+                const li = document.createElement('li');
+                li.textContent = city;
+                if(city === currentCityValue) li.classList.add('active');
+                li.addEventListener('click', () => {
+                    currentCityValue = city;
+                    document.getElementById('currentCity').textContent = city;
+                    document.getElementById('city').value = city;
+                    cityModal.classList.remove('active');
+                    renderCities();
+                });
+                cityList.appendChild(li);
             });
+        }
+
+        document.getElementById('citySelect').addEventListener('click', () => {
+            cityModal.classList.add('active');
+            citySearch.value = '';
+            renderCities();
+            citySearch.focus();
         });
-        
-        document.addEventListener('click', () => {
-            cityDropdown.classList.remove('active');
+
+        document.getElementById('cityChangeBtn').addEventListener('click', () => {
+            cityModal.classList.add('active');
+            citySearch.value = '';
+            renderCities();
+            citySearch.focus();
+        });
+
+        citySearch.addEventListener('input', (e) => {
+            renderCities(e.target.value);
+        });
+
+        cityModal.addEventListener('click', (e) => {
+            if(e.target === cityModal) {
+                cityModal.classList.remove('active');
+            }
         });
 
         // Чипсы выбора типа работы
@@ -682,8 +1175,16 @@
                 document.getElementById('type').value = chip.dataset.value;
             });
         });
-        // Выбираем первый чипс по умолчанию
-        document.querySelector('.chip').classList.add('active');
+
+        // FAQ аккордеон
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if(!isActive) item.classList.add('active');
+            });
+        });
 
         // Отправка формы
         document.getElementById('leadForm').addEventListener('submit', async function(e) {
@@ -716,8 +1217,15 @@
             // Валидация
             const errors = [];
             if (data.name.length < 2) errors.push('Введите имя (минимум 2 символа)');
+            
             const phoneDigits = data.phone.replace(/\D/g, '');
-            if (phoneDigits.length < 10) errors.push('Введите корректный номер телефона');
+            if (phoneDigits.length < 10) {
+                errors.push('Введите корректный номер телефона (минимум 10 цифр)');
+            }
+            if (/[a-zA-Zа-яА-Я]/.test(data.phone)) {
+                errors.push('Телефон должен содержать только цифры');
+            }
+            
             if (data.city.length < 2) errors.push('Укажите город');
             
             if (errors.length > 0) {
@@ -745,10 +1253,10 @@
                 this.reset();
                 btn.disabled = false;
                 btn.textContent = originalText;
-                // Сбрасываем чипс на первый
                 document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
                 document.querySelector('.chip').classList.add('active');
                 document.getElementById('type').value = 'Пеший';
+                document.getElementById('city').value = currentCityValue;
             });
         });
     </script>
