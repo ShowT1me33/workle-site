@@ -3,75 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Политика конфиденциальности | Workle.Pro</title>
+    <title>Политика конфиденциальности | Rabota-Bez-Opyta.ru</title>
+    <meta name="description" content="Политика обработки персональных данных сайта Rabota-Bez-Opyta.ru">
+    <link rel="icon" type="image/png" href="image/favicon.png">
     <style>
-        :root { --primary: #FFD600; --dark: #1A1A1A; --light: #FFFFFF; --gray: #F5F5F5; --gray-dark: #6B7280; --text: #333333; --success: #21A038; --accent: #FF6B35; }
+        :root {
+            --dark: #1A1A1A;
+            --gray-dark: #6B7280;
+            --text: #333333;
+            --accent: #FF6B35;
+            --light: #FFFFFF;
+            --gray: #F5F5F5;
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: var(--light); color: var(--text); line-height: 1.6; }
+        body { background-color: var(--light); color: var(--text); line-height: 1.7; }
         
-        /* Header & Footer стили (упрощенные для этой страницы) */
-        .header { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 1rem 5%; display: flex; align-items: center; justify-content: space-between; }
-        .header-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--dark); font-weight: 800; font-size: 1.3rem; }
-        footer { background: var(--dark); color: #9CA3AF; padding: 2rem 5%; text-align: center; margin-top: 4rem; }
-        footer a { color: #9CA3AF; text-decoration: none; }
+        .header {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 1rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
         
-        /* Стили для текста политики */
-        .policy-container { max-width: 900px; margin: 3rem auto; padding: 0 5%; }
-        .policy-container h1 { font-size: 2rem; margin-bottom: 2rem; color: var(--dark); }
-        .policy-container h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--dark); }
-        .policy-container h3 { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: var(--dark); }
-        .policy-container p, .policy-container li { margin-bottom: 0.8rem; color: #4B5563; font-size: 0.95rem; }
-        .policy-container ul, .policy-container ol { margin-left: 1.5rem; margin-bottom: 1rem; }
-        .policy-container a { color: var(--accent); text-decoration: none; }
-        .policy-container a:hover { text-decoration: underline; }
-        .policy-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        .policy-table th, .policy-table td { border: 1px solid #E5E7EB; padding: 0.8rem; text-align: left; font-size: 0.9rem; }
-        .policy-table th { background: var(--gray); font-weight: 700; }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 1.3rem;
+        }
+        
+        .header-logo img {
+            border-radius: 8px;
+        }
+        
+        .back-link {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 5%;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        h3 {
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        th, td {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        th {
+            background: var(--gray);
+            font-weight: 700;
+            color: var(--dark);
+            width: 30%;
+        }
+        
+        td {
+            color: var(--text);
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: #9CA3AF;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            color: #9CA3AF;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: #9CA3AF;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            th, td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header class="header">
         <a href="index.html" class="header-logo">
-            <svg width="30" height="30" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10,75 L60,20 L50,70 L90,70 L40,130 L55,75 L10,75 Z" fill="#FFD600"/>
-                <path d="M70,30 L120,75 L70,120 L70,90 L90,75 L70,60 Z" fill="#1A1A1A"/>
-            </svg>
-            Workle.Pro
+            <img src="image/logo.png" alt="Работа Без Опыта" width="40" height="40">
+            <span>Работа Без Опыта</span>
         </a>
-        <a href="index.html" style="color: var(--dark); text-decoration: none; font-weight: 600;">← Вернуться на главную</a>
+        <a href="index.html" class="back-link">← Вернуться на главную</a>
     </header>
 
-    <div class="policy-container">
+    <div class="container">
         <h1>Политика в отношении обработки персональных данных</h1>
         
         <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. № 152-ФЗ «О персональных данных» (далее — Закон о персональных данных) и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые Пластинин Егор Александрович (далее — Оператор).</p>
 
         <h2>1. Общие положения</h2>
         <p>1.1. Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
-        <p>1.2. Настоящая политика Оператора в отношении обработки персональных данных (далее — Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта <a href="https://workle-site.pages.dev">https://workle-site.pages.dev</a>.</p>
+        <p>1.2. Настоящая политика Оператора в отношении обработки персональных данных (далее — Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта <a href="https://rabota-bez-opyta.ru">https://rabota-bez-opyta.ru</a>.</p>
 
         <h2>2. Основные понятия, используемые в Политике</h2>
-        <p>2.1. <strong>Автоматизированная обработка персональных данных</strong> — обработка персональных данных с помощью средств вычислительной техники.</p>
-        <p>2.2. <strong>Веб-сайт</strong> — совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу <a href="https://workle-site.pages.dev">https://workle-site.pages.dev</a>.</p>
-        <p>2.3. <strong>Оператор</strong> — государственное учреждение, муниципальное учреждение, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных, а также определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными.</p>
-        <p>2.4. <strong>Персональные данные</strong> — любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта <a href="https://workle-site.pages.dev">https://workle-site.pages.dev</a>.</p>
-        <p>2.5. <strong>Пользователь</strong> — любой посетитель веб-сайта <a href="https://workle-site.pages.dev">https://workle-site.pages.dev</a>.</p>
-        <!-- (Остальные пункты 2.6 - 2.14 можно оставить как есть, они стандартные) -->
+        <p>2.1. Автоматизированная обработка персональных данных — обработка персональных данных с помощью средств вычислительной техники.</p>
+        <p>2.2. Веб-сайт — совокупность графических и информационных материалов, а также программ для ЭВМ и баз данных, обеспечивающих их доступность в сети интернет по сетевому адресу <a href="https://rabota-bez-opyta.ru">https://rabota-bez-opyta.ru</a>.</p>
+        <p>2.3. Оператор — государственное учреждение, муниципальное учреждение, юридическое или физическое лицо, самостоятельно или совместно с другими лицами организующие и (или) осуществляющие обработку персональных данных, а также определяющие цели обработки персональных данных, состав персональных данных, подлежащих обработке, действия (операции), совершаемые с персональными данными.</p>
+        <p>2.4. Персональные данные — любая информация, относящаяся прямо или косвенно к определенному или определяемому Пользователю веб-сайта <a href="https://rabota-bez-opyta.ru">https://rabota-bez-opyta.ru</a>.</p>
+        <p>2.5. Пользователь — любой посетитель веб-сайта <a href="https://rabota-bez-opyta.ru">https://rabota-bez-opyta.ru</a>.</p>
 
         <h2>3. Основные права и обязанности Оператора</h2>
-        <p>3.1. Оператор имеет право получать от субъекта персональных данных достоверные информацию и/или документы, содержащие персональные данные...</p>
-        <p>3.2. Оператор обязан предоставлять субъекту персональных данных по его просьбе информацию, касающуюся обработки его персональных данных...</p>
+        <p>3.1. Оператор имеет право получать от субъекта персональных данных достоверные информацию и/или документы, содержащие персональные данные.</p>
+        <p>3.2. Оператор обязан предоставлять субъекту персональных данных по его просьбе информацию, касающуюся обработки его персональных данных.</p>
 
         <h2>4. Основные права и обязанности субъектов персональных данных</h2>
-        <p>4.1. Субъекты персональных данных имеют право получать информацию, касающуюся обработки его персональных данных, требовать уточнения, блокирования или уничтожения данных...</p>
+        <p>4.1. Субъекты персональных данных имеют право получать информацию, касающуюся обработки его персональных данных, требовать уточнения, блокирования или уничтожения данных.</p>
 
         <h2>5. Принципы обработки персональных данных</h2>
         <p>5.1. Обработка персональных данных осуществляется на законной и справедливой основе.</p>
         <p>5.2. Обработка персональных данных ограничивается достижением конкретных, заранее определенных и законных целей.</p>
 
         <h2>6. Цели обработки персональных данных</h2>
-        <table class="policy-table">
+        <table>
             <tr>
                 <th>Цель обработки</th>
                 <td>Подбор и предоставление соискателю информации о вакансиях (курьер, сборщик), содействие в трудоустройстве к компаниям-партнерам сервиса, а также обратная связь с соискателем для уточнения деталей заявки и процесса оформления.</td>
@@ -102,12 +245,12 @@
 
         <h2>9. Заключительные положения</h2>
         <p>9.1. Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору с помощью электронной почты <a href="mailto:showt1me0107rrr@gmail.com">showt1me0107rrr@gmail.com</a>.</p>
-        <p>9.2. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу <a href="https://workle-site.pages.dev/privacy.html">https://workle-site.pages.dev/privacy.html</a>.</p>
+        <p>9.2. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу <a href="https://rabota-bez-opyta.ru/privacy.html">https://rabota-bez-opyta.ru/privacy.html</a>.</p>
     </div>
 
     <footer>
-        <p>© 2026 Workle Partner. Информационный ресурс.</p>
-        <p style="font-size: 0.8rem; margin-top: 1rem;"><a href="privacy.html">Политика конфиденциальности</a></p>
+        <p>© 2026 Rabota-Bez-Opyta.ru. Информационный сервис по подбору персонала.</p>
+        <p><a href="privacy.html">Политика конфиденциальности</a></p>
     </footer>
 
 </body>
