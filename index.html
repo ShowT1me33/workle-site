@@ -262,24 +262,77 @@
             filter: grayscale(100%) opacity(0.5);
         }
 
-        .partner-circle:hover {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.1);
-            box-shadow: var(--shadow-hover);
-        }
+        .partner-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
-        .partner-circle img {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: contain;
-        }
+.partner-circle .partner-text {
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    text-align: center;
+    transition: color 0.3s ease;
+    padding: 0 1rem;
+}
 
-        .partner-text {
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--dark);
-        }
+/* Яндекс Лавка - голубой */
+.partner-lavka:hover {
+    background: #00A3E0;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-lavka:hover .partner-text {
+    color: white;
+}
 
+/* Яндекс Еда - желтый */
+.partner-yandex:hover {
+    background: #FFCC00;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-yandex:hover .partner-text {
+    color: black;
+}
+
+/* OZON - сине-фиолетовый */
+.partner-ozon:hover {
+    background: #005BFF;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-ozon:hover .partner-text {
+    color: white;
+}
+
+/* Купер - зеленый */
+.partner-kupe:hover {
+    background: #00A550;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-kupe:hover .partner-text {
+    color: white;
+}
+
+/* Магнит - красный */
+.partner-magnit:hover {
+    background: #E30613;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-magnit:hover .partner-text {
+    color: white;
+}
         /* ===== STEPS ===== */
         .steps {
             position: relative;
@@ -847,11 +900,7 @@
                 <a href="#vacancies">Актуальные предложения</a>
             </nav>
             
-            <div class="header-contacts">
-                <div class="city-select" id="citySelect">
-                    <span>📍</span>
-                    <span class="city-name" id="currentCity">Москва</span>
-                </div>
+    
                 <a href="https://t.me/+6276623190" class="header-btn" target="_blank">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.099.154.232.17.325.015.093.034.305.019.471z"/>
@@ -883,24 +932,25 @@
     <!-- PARTNERS -->
     <section id="partners" class="partners">
         <h3>Официально сотрудничаем с лидерами рынка:</h3>
-        <div class="partners-grid">
-            <div class="partners-row">
-                <div class="partner-circle">
-                    <span class="partner-text">Яндекс Лавка</span>
-                </div>
-                <div class="partner-circle">
-                    <span class="partner-text">Яндекс Еда</span>
-                </div>
-                <div class="partner-circle">
-                    <span class="partner-text">OZON</span>
-                </div>
-            </div>
-            <div class="partners-row">
-                <div class="partner-circle">
-                    <span class="partner-text">Купер</span>
-                </div>
-                <div class="partner-circle">
-                    <span class="partner-text">Магнит</span>
+        <div class="partners-row">
+    <div class="partner-circle partner-lavka">
+        <span class="partner-text">Яндекс Лавка</span>
+    </div>
+    <div class="partner-circle partner-yandex">
+        <span class="partner-text">Яндекс Еда</span>
+    </div>
+    <div class="partner-circle partner-ozon">
+        <span class="partner-text">OZON</span>
+    </div>
+</div>
+<div class="partners-row">
+    <div class="partner-circle partner-kupe">
+        <span class="partner-text">Купер</span>
+    </div>
+    <div class="partner-circle partner-magnit">
+        <span class="partner-text">Магнит</span>
+    </div>
+</div>
                 </div>
             </div>
         </div>
@@ -1040,27 +1090,28 @@
                     <input type="tel" id="phone" required placeholder="+7 (___) ___-__-__">
                 </div>
                 
-                <div class="field city-field">
-                    <label>Город</label>
-                    <input type="text" id="city" required placeholder="Москва" value="Москва" readonly>
-                    <span class="city-change" id="cityChangeBtn">Изменить</span>
-                </div>
+        
                 
-                <div class="field">
+                               <div class="field">
                     <label class="chips-label">Предпочитаемый формат работы</label>
                     <div class="chips">
                         <div class="chip active" data-value="Пеший">🚶 Пеший</div>
                         <div class="chip" data-value="Вело">🚴 Вело</div>
-                        <div class="chip" data-value="Авто"> Авто</div>
+                        <div class="chip" data-value="Авто">🚗 Авто</div>
                         <div class="chip" data-value="Сборщик">📦 Сборщик</div>
                     </div>
                     <input type="hidden" id="type" value="Пеший">
                 </div>
                 
+                <!-- НОВАЯ ГАЛОЧКА СОГЛАСИЯ -->
+                <div class="field" style="display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1.5rem;">
+                    <input type="checkbox" id="privacy-consent" required style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--success); cursor: pointer; flex-shrink: 0;">
+                    <label for="privacy-consent" style="font-size: 0.85rem; color: var(--gray-dark); font-weight: 400; cursor: pointer; line-height: 1.4;">
+                        Я даю согласие на обработку моих <a href="privacy.html" target="_blank" style="color: var(--accent); text-decoration: underline;">персональных данных</a> в соответствии с Политикой конфиденциальности
+                    </label>
+                </div>
+                
                 <button type="submit" class="submit-btn" id="btn">Получить подборку вакансий</button>
-                <p class="form-disclaimer">🔒 Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
-            </form>
-        </div>
     </section>
 
     <!-- FOOTER -->
@@ -1073,192 +1124,107 @@
         </div>
     </footer>
 
-    <!-- CITY MODAL -->
-    <div class="modal-overlay" id="cityModal">
-        <div class="modal">
-            <h3>Выберите ваш город</h3>
-            <input type="text" class="modal-search" id="citySearch" placeholder="Найти город...">
-            <ul class="city-list" id="cityList"></ul>
-        </div>
-    </div>
 
-    <script>
-        // === НАСТРОЙКИ ===
-        const WORKER_URL = "https://delivery-bottest.showt1me0107rrr.workers.dev"; 
-        const formOpenTime = Date.now();
+<script>
+    // === НАСТРОЙКИ ===
+    const WORKER_URL = "https://delivery-bottest.showt1me0107rrr.workers.dev"; 
+    const formOpenTime = Date.now();
 
-        // Список городов
-        const cities = [
-            "Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Казань",
-            "Нижний Новгород", "Челябинск", "Самара", "Омск", "Ростов-на-Дону",
-            "Уфа", "Красноярск", "Пермь", "Воронеж", "Волгоград",
-            "Краснодар", "Саратов", "Тюмень", "Тольятти", "Ижевск",
-            "Барнаул", "Ульяновск", "Иркутск", "Хабаровск", "Ярославль",
-            "Владивосток", "Махачкала", "Томск", "Оренбург", "Кемерово",
-            "Новокузнецк", "Рязань", "Набережные Челны", "Астрахань", "Пенза",
-            "Липецк", "Киров", "Чебоксары", "Тула", "Калининград",
-            "Курск", "Ставрополь", "Улан-Удэ", "Тверь", "Магнитогорск",
-            "Сочи", "Иваново", "Брянск", "Белгород", "Сургут",
-            "Владимир", "Архангельск", "Калуга", "Смоленск", "Чита",
-            "Саранск", "Курган", "Вологда", "Орёл", "Якутск",
-            "Мурманск", "Тамбов", "Грозный", "Стерлитамак", "Кострома",
-            "Петрозаводск", "Нижневартовск", "Новороссийск", "Йошкар-Ола", "Сыктывкар",
-            "Нальчик", "Шахты", "Дзержинск", "Орск", "Братск",
-            "Ангарск", "Старый Оскол", "Великий Новгород", "Псков", "Бийск",
-            "Прокопьевск", "Химки", "Балашиха", "Королёв", "Мытищи"
-        ];
+    // Чипсы выбора типа работы
+    document.querySelectorAll('.chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            document.getElementById('type').value = chip.dataset.value;
+        });
+    });
 
-        // Автоопределение города
-        fetch('https://ipapi.co/json/')
-            .then(r => r.json())
-            .then(d => {
-                if(d.city && cities.includes(d.city)) {
-                    document.getElementById('currentCity').textContent = d.city;
-                    document.getElementById('city').value = d.city;
-                }
-            })
-            .catch(() => console.log('Geo error'));
+    // FAQ аккордеон
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if(!isActive) item.classList.add('active');
+        });
+    });
 
-        // Модальное окно выбора города
-        const cityModal = document.getElementById('cityModal');
-        const cityList = document.getElementById('cityList');
-        const citySearch = document.getElementById('citySearch');
-        let currentCityValue = document.getElementById('city').value;
+    // Отправка формы
+    document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const btn = document.getElementById('btn');
+        const originalText = btn.textContent;
 
-        function renderCities(filter = '') {
-            cityList.innerHTML = '';
-            const filtered = cities.filter(c => c.toLowerCase().includes(filter.toLowerCase()));
-            filtered.forEach(city => {
-                const li = document.createElement('li');
-                li.textContent = city;
-                if(city === currentCityValue) li.classList.add('active');
-                li.addEventListener('click', () => {
-                    currentCityValue = city;
-                    document.getElementById('currentCity').textContent = city;
-                    document.getElementById('city').value = city;
-                    cityModal.classList.remove('active');
-                    renderCities();
-                });
-                cityList.appendChild(li);
-            });
+        // Проверка времени (боты заполняют мгновенно)
+        const submitTime = Date.now();
+        if (submitTime - formOpenTime < 3000) {
+            console.log('Bot detected - too fast');
+            return;
         }
 
-        document.getElementById('citySelect').addEventListener('click', () => {
-            cityModal.classList.add('active');
-            citySearch.value = '';
-            renderCities();
-            citySearch.focus();
-        });
+        // Honeypot проверка
+        const honeypot = document.getElementById('honeypot').value;
+        if (honeypot) {
+            console.log('Bot detected - honeypot filled');
+            return;
+        }
 
-        document.getElementById('cityChangeBtn').addEventListener('click', () => {
-            cityModal.classList.add('active');
-            citySearch.value = '';
-            renderCities();
-            citySearch.focus();
-        });
+        // Собираем данные (БЕЗ ГОРОДА)
+        const data = {
+            name: document.getElementById('name').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            type: document.getElementById('type').value
+        };
 
-        citySearch.addEventListener('input', (e) => {
-            renderCities(e.target.value);
-        });
+        // Валидация (БЕЗ ПРОВЕРКИ ГОРОДА)
+        const errors = [];
+        if (data.name.length < 2) errors.push('Введите имя (минимум 2 символа)');
+        
+        const phoneDigits = data.phone.replace(/\D/g, '');
+        if (phoneDigits.length < 10) {
+            errors.push('Введите корректный номер телефона (минимум 10 цифр)');
+        }
+        if (/[a-zA-Zа-яА-Я]/.test(data.phone)) {
+            errors.push('Телефон должен содержать только цифры');
+        }
+        
+        if (!document.getElementById('privacy-consent').checked) {
+            errors.push('Необходимо дать согласие на обработку персональных данных');
+        }
+        
+        if (errors.length > 0) {
+            alert('⚠️ Проверьте данные:\n\n' + errors.join('\n'));
+            return;
+        }
 
-        cityModal.addEventListener('click', (e) => {
-            if(e.target === cityModal) {
-                cityModal.classList.remove('active');
-            }
-        });
+        btn.disabled = true;
+        btn.textContent = "Отправка...";
 
-        // Чипсы выбора типа работы
-        document.querySelectorAll('.chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-                document.getElementById('type').value = chip.dataset.value;
-            });
-        });
-
-        // FAQ аккордеон
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                const isActive = item.classList.contains('active');
-                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                if(!isActive) item.classList.add('active');
-            });
-        });
-
-        // Отправка формы
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+        fetch(WORKER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log('Ответ сервера:', result);
+        })
+        .catch(error => {
+            console.log('Ошибка отправки:', error);
+        })
+        .finally(() => {
+            alert("✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.");
+            this.reset();
+            btn.disabled = false;
+            btn.textContent = originalText;
             
-            const btn = document.getElementById('btn');
-            const originalText = btn.textContent;
-
-            // Проверка времени (боты заполняют мгновенно)
-            const submitTime = Date.now();
-            if (submitTime - formOpenTime < 3000) {
-                console.log('Bot detected - too fast');
-                return;
-            }
-
-            // Honeypot проверка
-            const honeypot = document.getElementById('honeypot').value;
-            if (honeypot) {
-                console.log('Bot detected - honeypot filled');
-                return;
-            }
-
-            const data = {
-                name: document.getElementById('name').value.trim(),
-                phone: document.getElementById('phone').value.trim(),
-                city: document.getElementById('city').value.trim(),
-                type: document.getElementById('type').value
-            };
-
-            // Валидация
-            const errors = [];
-            if (data.name.length < 2) errors.push('Введите имя (минимум 2 символа)');
-            
-            const phoneDigits = data.phone.replace(/\D/g, '');
-            if (phoneDigits.length < 10) {
-                errors.push('Введите корректный номер телефона (минимум 10 цифр)');
-            }
-            if (/[a-zA-Zа-яА-Я]/.test(data.phone)) {
-                errors.push('Телефон должен содержать только цифры');
-            }
-            
-            if (data.city.length < 2) errors.push('Укажите город');
-            
-            if (errors.length > 0) {
-                alert('⚠️ Проверьте данные:\n\n' + errors.join('\n'));
-                return;
-            }
-
-            btn.disabled = true;
-            btn.textContent = "Отправка...";
-
-            fetch(WORKER_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                console.log('Ответ сервера:', result);
-            })
-            .catch(error => {
-                console.log('Ошибка отправки:', error);
-            })
-            .finally(() => {
-                alert("✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.");
-                this.reset();
-                btn.disabled = false;
-                btn.textContent = originalText;
-                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-                document.querySelector('.chip').classList.add('active');
-                document.getElementById('type').value = 'Пеший';
-                document.getElementById('city').value = currentCityValue;
-            });
+            // Сбрасываем чипс на первый по умолчанию
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            document.querySelector('.chip').classList.add('active');
+            document.getElementById('type').value = 'Пеший';
         });
-    </script>
+    });
+</script>
 </body>
 </html>
