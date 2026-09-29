@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Работа без опыта | Ежедневные выплаты</title>
+    <title>Работа без опыта с ежедневными выплатами | Rabota-Bez-Opyta.ru</title>
+    <meta name="description" content="Подберем вакансию без опыта рядом с домом за 15 минут. Ежедневные выплаты, гибкий график, официальное оформление. Яндекс, Ozon, Купер.">
+    <meta name="keywords" content="работа без опыта, работа курьером, подработка с ежедневной оплатой, трудоустройство, вакансии">
+    
+    <!-- Open Graph для красивых ссылок в Telegram/VK -->
+    <meta property="og:title" content="Работа без опыта с ежедневными выплатами">
+    <meta property="og:description" content="Подберем вакансию рядом с домом за 15 минут.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rabota-bez-opyta.ru">
+    <meta property="og:image" content="https://rabota-bez-opyta.ru/image/hero-bg.jpg">
+    
     <style>
         :root {
             --primary: #FFD600;
@@ -82,46 +92,26 @@
             flex-shrink: 0;
         }
 
-        .city-select {
+        .header-btn {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
+            background: #2AABEE;
+            color: white;
+            padding: 0.7rem 1.3rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border: none;
             cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: background 0.2s;
         }
 
-        .city-select:hover {
-            background: var(--gray);
-        }
-
-        .city-name {
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 0.95rem;
-        }
-
-      .header-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #2AABEE;
-    color: white;
-    padding: 0.7rem 1.3rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-    border: none;
-    cursor: pointer;
-}
-
-.header-btn:hover {
-    background: #229ED9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(42, 171, 238, 0.4);
+        .header-btn:hover {
+            background: #229ED9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(42, 171, 238, 0.4);
         }
 
         /* ===== HERO ===== */
@@ -219,166 +209,107 @@
             box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
         }
 
-    
-/* ===== PARTNERS ===== */
-.partners {
-    padding: 5rem 5%;
-    background: var(--light);
-    text-align: center;
-}
+        /* ===== PARTNERS ===== */
+        .partners {
+            padding: 5rem 5%;
+            background: var(--light);
+            text-align: center;
+        }
 
-.partners h3 {
-    font-size: 1.5rem;
-    color: var(--dark);
-    margin-bottom: 3rem;
-    font-weight: 700;
-}
+        .partners h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
 
-.partners-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
+        .partners-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-.partners-row {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-.partner-circle .partner-text {
-    font-weight: 800;
-    font-size: 1rem;
-    color: var(--gray-dark);
-    text-align: center;
-    transition: color 0.3s ease;
-    padding: 0 1rem;
-}
+        .partners-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
 
-/* Яндекс Лавка - голубой */
-.partner-lavka:hover {
-    background: #00A3E0;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-lavka:hover .partner-text {
-    color: white;
-}
+        .partner-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-/* Яндекс Еда - желтый */
-.partner-yandex:hover {
-    background: #FFCC00;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-yandex:hover .partner-text {
-    color: black;
-}
+        .partner-circle .partner-text {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--gray-dark);
+            text-align: center;
+            transition: color 0.3s ease;
+            padding: 0 1rem;
+        }
 
-/* OZON - сине-фиолетовый */
-.partner-ozon:hover {
-    background: #005BFF;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-ozon:hover .partner-text {
-    color: white;
-}
+        /* Яндекс Лавка - голубой */
+        .partner-lavka:hover {
+            background: #00A3E0;
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+        .partner-lavka:hover .partner-text {
+            color: white;
+        }
 
-/* Купер - зеленый */
-.partner-kupe:hover {
-    background: #00A550;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-kupe:hover .partner-text {
-    color: white;
-}
+        /* Яндекс Еда - желтый */
+        .partner-yandex:hover {
+            background: #FFCC00;
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+        .partner-yandex:hover .partner-text {
+            color: black;
+        }
 
-/* Магнит - красный */
-.partner-magnit:hover {
-    background: #E30613;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-magnit:hover .partner-text {
-    color: white;
-}
-        /* ===== PARTNERS COLORS ===== */
-.partner-circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
+        /* OZON - сине-фиолетовый */
+        .partner-ozon:hover {
+            background: #005BFF;
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+        .partner-ozon:hover .partner-text {
+            color: white;
+        }
 
-.partner-circle .partner-text {
-    font-weight: 800;
-    font-size: 1rem;
-    color: var(--gray-dark);
-    text-align: center;
-    transition: color 0.3s ease;
-    padding: 0 1rem;
-}
+        /* Купер - зеленый */
+        .partner-kupe:hover {
+            background: #00A550;
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+        .partner-kupe:hover .partner-text {
+            color: white;
+        }
 
-/* Яндекс Лавка - голубой */
-.partner-lavka:hover {
-    background: #00A3E0;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-lavka:hover .partner-text {
-    color: white;
-}
-
-/* Яндекс Еда - желтый */
-.partner-yandex:hover {
-    background: #FFCC00;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-yandex:hover .partner-text {
-    color: black;
-}
-
-/* OZON - сине-фиолетовый */
-.partner-ozon:hover {
-    background: #005BFF;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-ozon:hover .partner-text {
-    color: white;
-}
-
-/* Купер - зеленый */
-.partner-kupe:hover {
-    background: #00A550;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-kupe:hover .partner-text {
-    color: white;
-}
-
-/* Магнит - красный */
-.partner-magnit:hover {
-    background: #E30613;
-    transform: scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-.partner-magnit:hover .partner-text {
-    color: white;
-}
+        /* Магнит - красный */
+        .partner-magnit:hover {
+            background: #E30613;
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+        .partner-magnit:hover .partner-text {
+            color: white;
+        }
 
         /* ===== STEPS ===== */
         .steps {
@@ -431,21 +362,21 @@
             margin: 0 auto;
         }
 
-       .step-card {
-    background: white;
-    padding: 2.5rem 2rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
-    text-align: center;
-}
+        .step-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+            text-align: center;
+        }
 
         .step-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
-.step-icon {
+        .step-icon {
             margin-bottom: 1.5rem;
             display: flex;
             justify-content: center;
@@ -681,22 +612,6 @@
             outline: none;
         }
 
-        .city-field {
-            position: relative;
-        }
-
-        .city-change {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--accent);
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-decoration: underline;
-            font-weight: 600;
-        }
-
         .chips-label {
             margin-bottom: 1rem;
             font-weight: 700;
@@ -730,30 +645,30 @@
             border-color: var(--accent);
         }
 
-      .submit-btn {
-    width: 100%;
-    padding: 1.3rem;
-    background: #2AABEE;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-top: 1rem;
-}
+        .submit-btn {
+            width: 100%;
+            padding: 1.3rem;
+            background: #2AABEE;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 1rem;
+        }
 
-.submit-btn:hover {
-    background: #229ED9;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(42, 171, 238, 0.4);
-}
+        .submit-btn:hover {
+            background: #229ED9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(42, 171, 238, 0.4);
+        }
 
-.submit-btn:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .form-disclaimer {
@@ -804,76 +719,6 @@
             color: white;
         }
 
-        /* ===== MODAL ===== */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            max-width: 500px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-hover);
-        }
-
-        .modal h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .modal-search {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .modal-search:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .city-list {
-            list-style: none;
-        }
-
-        .city-list li {
-            padding: 0.8rem 1rem;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background 0.2s;
-        }
-
-        .city-list li:hover {
-            background: var(--gray);
-        }
-
-        .city-list li.active {
-            background: var(--accent);
-            color: white;
-            font-weight: 700;
-        }
-
         /* ===== MOBILE ===== */
         @media (max-width: 768px) {
             .header-container {
@@ -892,10 +737,6 @@
             
             .header-logo-text {
                 font-size: 1.1rem;
-            }
-            
-            .city-name {
-                display: none;
             }
 
             .hero {
@@ -941,7 +782,7 @@
                     <path d="M10,75 L60,20 L50,70 L90,70 L40,130 L55,75 L10,75 Z" fill="#FFD600"/>
                     <path d="M70,30 L120,75 L70,120 L70,90 L90,75 L70,60 Z" fill="#1A1A1A"/>
                 </svg>
-                <span class="header-logo-text">Workle.Pro</span>
+                <span class="header-logo-text">Работа Без Опыта</span>
             </div>
             
             <nav class="header-nav">
@@ -950,7 +791,7 @@
                 <a href="#vacancies">Актуальные предложения</a>
             </nav>
             
-    
+            <div class="header-contacts">
                 <a href="https://t.me/Egorpetr0ff" class="header-btn" target="_blank">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.139-5.062 3.345-.479.329-.913.489-1.302.481-.428-.009-1.252-.242-1.865-.442-.751-.244-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.627 4.477-1.635.099-.002.321.023.465.141.121.099.154.232.17.325.015.093.034.305.019.471z"/>
@@ -970,9 +811,9 @@
             <p class="hero-subtitle">Подберем вакансию рядом с вашим домом. Оформление за 15 минут с официальными партнерами.</p>
             
             <div class="trust-badges">
-                <div class="trust-badge">Ежедневные выплаты</div>
-                <div class="trust-badge">Бесплатное обучение</div>
-                <div class="trust-badge">Быстрое и официальное трудоустройство</div>
+                <div class="trust-badge">✅ Ежедневные выплаты</div>
+                <div class="trust-badge">✅ Бесплатное обучение</div>
+                <div class="trust-badge">✅ Быстрое и официальное трудоустройство</div>
             </div>
             
             <a href="#form" class="cta-main">Подобрать вакансию</a>
@@ -982,80 +823,79 @@
     <!-- PARTNERS -->
     <section id="partners" class="partners">
         <h3>Официально сотрудничаем с лидерами рынка:</h3>
-        <div class="partners-row">
-    <div class="partner-circle partner-lavka">
-        <span class="partner-text">Яндекс Лавка</span>
-    </div>
-    <div class="partner-circle partner-yandex">
-        <span class="partner-text">Яндекс Еда</span>
-    </div>
-    <div class="partner-circle partner-ozon">
-        <span class="partner-text">OZON</span>
-    </div>
-</div>
-<div class="partners-row">
-    <div class="partner-circle partner-kupe">
-        <span class="partner-text">Купер</span>
-    </div>
-    <div class="partner-circle partner-magnit">
-        <span class="partner-text">Магнит</span>
-    </div>
-</div>
+        <div class="partners-grid">
+            <div class="partners-row">
+                <div class="partner-circle partner-lavka">
+                    <span class="partner-text">Яндекс Лавка</span>
+                </div>
+                <div class="partner-circle partner-yandex">
+                    <span class="partner-text">Яндекс Еда</span>
+                </div>
+                <div class="partner-circle partner-ozon">
+                    <span class="partner-text">OZON</span>
+                </div>
+            </div>
+            <div class="partners-row">
+                <div class="partner-circle partner-kupe">
+                    <span class="partner-text">Купер</span>
+                </div>
+                <div class="partner-circle partner-magnit">
+                    <span class="partner-text">Магнит</span>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- STEPS -->
-<section id="steps" class="steps">
-    <div class="steps-bg"></div>
-    <div class="steps-overlay"></div>
-    <div class="steps-content">
-        <h2>Начните зарабатывать за 3 шага</h2>
-        <div class="steps-grid">
-            
-            <!-- Шаг 1 -->
-            <div class="step-card">
-                <div class="step-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
+    <!-- STEPS -->
+    <section id="steps" class="steps">
+        <div class="steps-bg"></div>
+        <div class="steps-overlay"></div>
+        <div class="steps-content">
+            <h2>Начните зарабатывать за 3 шага</h2>
+            <div class="steps-grid">
+                
+                <!-- Шаг 1 -->
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Оставьте заявку</h3>
+                    <p>Это займет 2 минуты. Укажите удобный формат работы.</p>
                 </div>
-                <h3>Оставьте заявку</h3>
-                <p>Это займет 2 минуты. Укажите удобный формат работы.</p>
-            </div>
 
-            <!-- Шаг 2 -->
-            <div class="step-card">
-                <div class="step-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
+                <!-- Шаг 2 -->
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                    </div>
+                    <h3>Получите одобрение</h3>
+                    <p>Мы свяжемся с вами в Telegram за 15 минут и подберем тариф.</p>
                 </div>
-                <h3>Получите одобрение</h3>
-                <p>Мы свяжемся с вами в Telegram за 15 минут и подберем тариф.</p>
-            </div>
 
-            <!-- Шаг 3 -->
-            <div class="step-card">
-                <div class="step-icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
-    <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
-    <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
-</svg>
+                <!-- Шаг 3 -->
+                <div class="step-card">
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
+                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
+                            <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
+                        </svg>
+                    </div>
+                    <h3>Выходите на слот</h3>
+                    <p>Пройдите короткое обучение и получите первые деньги уже завтра.</p>
                 </div>
-                <h3>Выходите на слот</h3>
-                <p>Пройдите короткое обучение и получите первые деньги уже завтра.</p>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- VACANCIES -->
     <section id="vacancies" class="vacancies">
@@ -1063,21 +903,18 @@
         <div class="vacancies-grid">
             <div class="vacancy-card">
                 <div class="vacancy-banner">
-                    <!-- Замените на ваш баннер: <img src="image/banner1.jpg" alt="Яндекс Еда"> -->
                     <img src="image/banner1.jpg" alt="Яндекс Еда">
                 </div>
                 <a href="https://advt.pro/product/ProductId~01HM6F39WYNVS7SKCPFF7KBANC!ExecutorId~01M3M7D0CC9209NW0MW2MZ37RX!UserId~01M3M7CZWZ7A8KRJWRM4AJA858!LegacyUserId~6151952?w_source=menu&partners=%5B%22%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81.%D0%A1%D0%BC%D0%B5%D0%BD%D0%B0%22%2C%22%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81.%D0%95%D0%B4%D0%B0%22%2C%22%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D0%9B%D0%B0%D0%B2%D0%BA%D0%B0%22%5D" class="vacancy-btn">Оформить заявку</a>
             </div>
             <div class="vacancy-card">
                 <div class="vacancy-banner">
-                    <!-- Замените на ваш баннер: <img src="image/banner2.jpg" alt="Купер"> -->
-                     <img src="image/banner2.jpg" alt="Купер">
+                    <img src="image/banner2.jpg" alt="Купер">
                 </div>
-               <a href="https://kuper.ru/rabota/sborshchik-zakazov?utm_source=partnerka_sms&utm_term=01M3MY52DHT9WDNC08JRTW45XZ&utm_campaign=q9yx8&utm_content=01M3MY52DHT9WDNC08JRTW45XZ&utm_medium=cpa&oid=gza29oy&wid=q9yx8&statid=2329_01M3MY52DHT9WDNC08JRTW45XZ&clickid=01M3MY52DHT9WDNC08JRTW45XZ&sub=01M3MY52DHT9WDNC08JRTW45XZ&sub2=01M3M7CZWZ7A8KRJWRM4AJA858&linkId=245354d5-90bb-4f0a-a860-31561e5c8f45" class="vacancy-btn">Оформить заявку</a>
+                <a href="https://kuper.ru/rabota/sborshchik-zakazov?utm_source=partnerka_sms&utm_term=01M3MY52DHT9WDNC08JRTW45XZ&utm_campaign=q9yx8&utm_content=01M3MY52DHT9WDNC08JRTW45XZ&utm_medium=cpa&oid=gza29oy&wid=q9yx8&statid=2329_01M3MY52DHT9WDNC08JRTW45XZ&clickid=01M3MY52DHT9WDNC08JRTW45XZ&sub=01M3MY52DHT9WDNC08JRTW45XZ&sub2=01M3M7CZWZ7A8KRJWRM4AJA858&linkId=245354d5-90bb-4f0a-a860-31561e5c8f45" class="vacancy-btn">Оформить заявку</a>
             </div>
             <div class="vacancy-card">
                 <div class="vacancy-banner">
-                    <!-- Замените на ваш баннер: <img src="image/banner3.jpg" alt="Ozon"> -->
                     <img src="image/banner3.jpg" alt="Ozon">
                 </div>
                 <a href="https://advt.pro/product/ProductId~01JP506VTRNQDTPC6JZBEKM8PA!ExecutorId~01M3M7D0CC9209NW0MW2MZ37RX!UserId~01M3M7CZWZ7A8KRJWRM4AJA858!LegacyUserId~6151952?w_source=menu&tab=conditions" class="vacancy-btn">Оформить заявку</a>
@@ -1097,10 +934,10 @@
                 <div class="faq-answer">
                     <div class="faq-answer-content">
                         <ul>
-                         <li><strong>📱 Смартфон</strong> — Android 7.0+ или iOS 12+ для установки приложения и приема заказов.</li>
-                <li><strong>📄 Документы</strong> — Паспорт РФ, СНИЛС и ИНН. Оформление полностью онлайн за 5 минут.</li>
-                <li><strong>🚲 Транспорт</strong> — Свой велосипед, самокат или автомобиль. Также доступна выгодная аренда у партнеров.</li>
-                <li><strong>📋 Самозанятость</strong> — Статус самозанятого. Мы поможем оформить его бесплатно через приложение «Мой налог».</li>
+                            <li><strong> Смартфон</strong> — Android 7.0+ или iOS 12+ для установки приложения и приема заказов.</li>
+                            <li><strong>📄 Документы</strong> — Паспорт РФ, СНИЛС и ИНН. Оформление полностью онлайн за 5 минут.</li>
+                            <li><strong>🚲 Транспорт</strong> — Свой велосипед, самокат или автомобиль. Также доступна выгодная аренда у партнеров.</li>
+                            <li><strong>📋 Самозанятость</strong> — Статус самозанятого. Мы поможем оформить его бесплатно через приложение «Мой налог».</li>
                         </ul>
                     </div>
                 </div>
@@ -1167,20 +1004,17 @@
                     <input type="tel" id="phone" required placeholder="+7 (___) ___-__-__">
                 </div>
                 
-        
-                
-                               <div class="field">
+                <div class="field">
                     <label class="chips-label">Предпочитаемый формат работы</label>
                     <div class="chips">
                         <div class="chip active" data-value="Пеший">🚶 Пеший</div>
-                        <div class="chip" data-value="Вело">🚴 Вело</div>
+                        <div class="chip" data-value="Вело"> Вело</div>
                         <div class="chip" data-value="Авто">🚗 Авто</div>
                         <div class="chip" data-value="Сборщик">📦 Сборщик</div>
                     </div>
                     <input type="hidden" id="type" value="Пеший">
                 </div>
                 
-                <!-- НОВАЯ ГАЛОЧКА СОГЛАСИЯ -->
                 <div class="field" style="display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1.5rem;">
                     <input type="checkbox" id="privacy-consent" required style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--success); cursor: pointer; flex-shrink: 0;">
                     <label for="privacy-consent" style="font-size: 0.85rem; color: var(--gray-dark); font-weight: 400; cursor: pointer; line-height: 1.4;">
@@ -1189,119 +1023,120 @@
                 </div>
                 
                 <button type="submit" class="submit-btn" id="btn">Получить подборку вакансий</button>
+            </form>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Workle Partner. Информационный ресурс.</p>
+        <p>© 2026 Rabota-Bez-Opyta.ru. Информационный сервис по подбору персонала.</p>
         <p class="footer-disclaimer">Не является публичной офертой. Условия выплат и трудоустройства зависят от выбранного партнера. Оформление осуществляется напрямую с компаниями-партнерами.</p>
         <div class="footer-links">
-            <a href="#">Политика конфиденциальности</a>
+            <a href="privacy.html">Политика конфиденциальности</a>
             <a href="https://t.me/Egorpetr0ff" target="_blank">Связаться с поддержкой</a>
         </div>
     </footer>
 
+    <script>
+        // === НАСТРОЙКИ ===
+        const WORKER_URL = "https://delivery-bottest.showt1me0107rrr.workers.dev"; 
+        const formOpenTime = Date.now();
 
-<script>
-    // === НАСТРОЙКИ ===
-    const WORKER_URL = "https://delivery-bottest.showt1me0107rrr.workers.dev"; 
-    const formOpenTime = Date.now();
-
-    // Чипсы выбора типа работы
-    document.querySelectorAll('.chip').forEach(chip => {
-        chip.addEventListener('click', () => {
-            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
-            document.getElementById('type').value = chip.dataset.value;
+        // Чипсы выбора типа работы
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                document.getElementById('type').value = chip.dataset.value;
+            });
         });
-    });
 
-    // FAQ аккордеон
-    document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', () => {
-            const item = q.parentElement;
-            const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            if(!isActive) item.classList.add('active');
+        // FAQ аккордеон
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if(!isActive) item.classList.add('active');
+            });
         });
-    });
 
-    // Отправка формы
-    document.getElementById('leadForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const btn = document.getElementById('btn');
-        const originalText = btn.textContent;
-
-        // Проверка времени (боты заполняют мгновенно)
-        const submitTime = Date.now();
-        if (submitTime - formOpenTime < 3000) {
-            console.log('Bot detected - too fast');
-            return;
-        }
-
-        // Honeypot проверка
-        const honeypot = document.getElementById('honeypot').value;
-        if (honeypot) {
-            console.log('Bot detected - honeypot filled');
-            return;
-        }
-
-        // Собираем данные (БЕЗ ГОРОДА)
-        const data = {
-            name: document.getElementById('name').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            type: document.getElementById('type').value
-        };
-
-        // Валидация (БЕЗ ПРОВЕРКИ ГОРОДА)
-        const errors = [];
-        if (data.name.length < 2) errors.push('Введите имя (минимум 2 символа)');
-        
-        const phoneDigits = data.phone.replace(/\D/g, '');
-        if (phoneDigits.length < 10) {
-            errors.push('Введите корректный номер телефона (минимум 10 цифр)');
-        }
-        if (/[a-zA-Zа-яА-Я]/.test(data.phone)) {
-            errors.push('Телефон должен содержать только цифры');
-        }
-        
-        if (!document.getElementById('privacy-consent').checked) {
-            errors.push('Необходимо дать согласие на обработку персональных данных');
-        }
-        
-        if (errors.length > 0) {
-            alert('⚠️ Проверьте данные:\n\n' + errors.join('\n'));
-            return;
-        }
-
-        btn.disabled = true;
-        btn.textContent = "Отправка...";
-
-        fetch(WORKER_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            console.log('Ответ сервера:', result);
-        })
-        .catch(error => {
-            console.log('Ошибка отправки:', error);
-        })
-        .finally(() => {
-            alert("✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.");
-            this.reset();
-            btn.disabled = false;
-            btn.textContent = originalText;
+        // Отправка формы
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-            // Сбрасываем чипс на первый по умолчанию
-            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-            document.querySelector('.chip').classList.add('active');
-            document.getElementById('type').value = 'Пеший';
+            const btn = document.getElementById('btn');
+            const originalText = btn.textContent;
+
+            // Проверка времени (боты заполняют мгновенно)
+            const submitTime = Date.now();
+            if (submitTime - formOpenTime < 3000) {
+                console.log('Bot detected - too fast');
+                return;
+            }
+
+            // Honeypot проверка
+            const honeypot = document.getElementById('honeypot').value;
+            if (honeypot) {
+                console.log('Bot detected - honeypot filled');
+                return;
+            }
+
+            // Собираем данные
+            const data = {
+                name: document.getElementById('name').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                type: document.getElementById('type').value
+            };
+
+            // Валидация
+            const errors = [];
+            if (data.name.length < 2) errors.push('Введите имя (минимум 2 символа)');
+            
+            const phoneDigits = data.phone.replace(/\D/g, '');
+            if (phoneDigits.length < 10) {
+                errors.push('Введите корректный номер телефона (минимум 10 цифр)');
+            }
+            if (/[a-zA-Zа-яА-Я]/.test(data.phone)) {
+                errors.push('Телефон должен содержать только цифры');
+            }
+            
+            if (!document.getElementById('privacy-consent').checked) {
+                errors.push('Необходимо дать согласие на обработку персональных данных');
+            }
+            
+            if (errors.length > 0) {
+                alert('⚠️ Проверьте данные:\n\n' + errors.join('\n'));
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = "Отправка...";
+
+            fetch(WORKER_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Ответ сервера:', result);
+            })
+            .catch(error => {
+                console.log('Ошибка отправки:', error);
+            })
+            .finally(() => {
+                alert("✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.");
+                this.reset();
+                btn.disabled = false;
+                btn.textContent = originalText;
+                
+                // Сбрасываем чипс на первый по умолчанию
+                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+                document.querySelector('.chip').classList.add('active');
+                document.getElementById('type').value = 'Пеший';
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
