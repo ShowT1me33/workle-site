@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://rabota-bez-opyta.ru/sitemap.xml
+
+Disallow: /privacy.html
