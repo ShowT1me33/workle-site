@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+<head> <link rel="icon" type="image/png" href="image/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Работа без опыта с ежедневными выплатами | Rabota-Bez-Opyta.ru</title>
@@ -623,27 +623,55 @@
             background: var(--accent);
         }
 
-        /* ===== FAQ ===== */
-        .faq {
-            padding: 5rem 5%;
-            background: var(--gray);
-        }
+      /* ===== FAQ ===== */
+.faq {
+    position: relative;
+    padding: 5rem 5%;
+    background: var(--gray);
+    overflow: hidden;
+}
 
-        .faq h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--dark);
-        }
+.faq-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('image/faq-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
 
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
+.faq-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 245, 245, 0.85);
+    z-index: 1;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--dark);
+    position: relative;
+    z-index: 2;
+}
+
+.faq-container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
 
         .faq-item {
             border-bottom: 1px solid #E5E7EB;
@@ -939,13 +967,11 @@
     <header class="header">
         <div class="header-container">
             <div class="header-logo">
-                <svg width="40" height="40" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10,75 L60,20 L50,70 L90,70 L40,130 L55,75 L10,75 Z" fill="#FFD600"/>
-                    <path d="M70,30 L120,75 L70,120 L70,90 L90,75 L70,60 Z" fill="#1A1A1A"/>
-                </svg>
-                <span class="header-logo-text">Работа для всех, без опыта</span>
-            </div>
-            
+                <div class="header-logo">
+    <img src="image/logo.png" alt="Работа Без Опыта" width="40" height="40" style="border-radius: 8px;">
+    <span class="header-logo-text">Работа для всех, без опыта</span>
+</div>
+             
             <nav class="header-nav">
                 <a href="#steps">Как начать</a>
                 <a href="#vacancies">Актуальные предложения</a>
@@ -1129,10 +1155,12 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
-        <h2>Часто задаваемые вопросы</h2>
-        <div class="faq-container">
+  <!-- FAQ -->
+<section class="faq">
+    <div class="faq-bg"></div>
+    <div class="faq-overlay"></div>
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
                     <span>Что мне понадобится?</span>
