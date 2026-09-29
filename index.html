@@ -249,7 +249,65 @@
     gap: 3rem;
     flex-wrap: wrap;
 }
+.partner-circle .partner-text {
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--gray-dark);
+    text-align: center;
+    transition: color 0.3s ease;
+    padding: 0 1rem;
+}
 
+/* Яндекс Лавка - голубой */
+.partner-lavka:hover {
+    background: #00A3E0;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-lavka:hover .partner-text {
+    color: white;
+}
+
+/* Яндекс Еда - желтый */
+.partner-yandex:hover {
+    background: #FFCC00;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-yandex:hover .partner-text {
+    color: black;
+}
+
+/* OZON - сине-фиолетовый */
+.partner-ozon:hover {
+    background: #005BFF;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-ozon:hover .partner-text {
+    color: white;
+}
+
+/* Купер - зеленый */
+.partner-kupe:hover {
+    background: #00A550;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-kupe:hover .partner-text {
+    color: white;
+}
+
+/* Магнит - красный */
+.partner-magnit:hover {
+    background: #E30613;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+}
+.partner-magnit:hover .partner-text {
+    color: white;
+}
+        /* ===== PARTNERS COLORS ===== */
 .partner-circle {
     width: 150px;
     height: 150px;
@@ -321,6 +379,7 @@
 .partner-magnit:hover .partner-text {
     color: white;
 }
+
         /* ===== STEPS ===== */
         .steps {
             position: relative;
@@ -348,7 +407,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(245, 245, 245, 0.85);
+            background: rgba(245, 245, 245, 0.45);
+            backdrop-filter: blur(2px);
             z-index: 1;
         }
 
@@ -384,9 +444,10 @@
             box-shadow: var(--shadow-hover);
         }
 
-        .step-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+.step-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
         }
 
         .step-card h3 {
@@ -944,31 +1005,81 @@
         </div>
     </section>
 
-    <!-- STEPS -->
-    <section id="steps" class="steps">
-        <div class="steps-bg"></div>
-        <div class="steps-overlay"></div>
-        <div class="steps-content">
-            <h2>Начните зарабатывать за 3 шага</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-icon">📝</div>
-                    <h3>Оставьте заявку</h3>
-                    <p>Это займет 2 минуты. Укажите удобный формат работы.</p>
+<!-- STEPS -->
+<section id="steps" class="steps">
+    <div class="steps-bg"></div>
+    <div class="steps-overlay"></div>
+    <div class="steps-content">
+        <h2>Начните зарабатывать за 3 шага</h2>
+        <div class="steps-grid">
+            
+            <!-- Шаг 1 -->
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
                 </div>
-                <div class="step-card">
-                    <div class="step-icon">🤝</div>
-                    <h3>Получите одобрение</h3>
-                    <p>Мы свяжемся с вами за 15 минут и подберем лучшего партнера.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">🚀</div>
-                    <h3>Выходите на слот</h3>
-                    <p>Пройдите короткое обучение и получите первые деньги уже завтра.</p>
-                </div>
+                <h3>Оставьте заявку</h3>
+                <p>Это займет 2 минуты. Укажите удобный формат работы.</p>
             </div>
+
+            <!-- Шаг 2 -->
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                </div>
+                <h3>Получите одобрение</h3>
+                <p>Мы свяжемся с вами в Telegram за 15 минут и подберем тариф.</p>
+            </div>
+
+            <!-- Шаг 3 -->
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2AABEE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <h3>Выходите на слот</h3>
+                <p>Пройдите короткое обучение и получите первые деньги уже завтра.</p>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+    <!-- REQUIREMENTS (Что нужно для старта) -->
+<section class="requirements">
+    <h2>Что нужно для начала работы</h2>
+    <div class="req-grid">
+        <div class="req-card">
+            <div class="req-icon">📱</div>
+            <h3>Смартфон</h3>
+            <p>Android 7.0+ или iOS 12+ для установки приложения и приема заказов.</p>
+        </div>
+        <div class="req-card">
+            <div class="req-icon">📄</div>
+            <h3>Документы</h3>
+            <p>Паспорт РФ, СНИЛС и ИНН. Оформление полностью онлайн за 5 минут.</p>
+        </div>
+        <div class="req-card">
+            <div class="req-icon">🚲</div>
+            <h3>Транспорт</h3>
+            <p>Свой велосипед, самокат или автомобиль. Также доступна выгодная аренда.</p>
+        </div>
+        <div class="req-card">
+            <div class="req-icon">🏦</div>
+            <h3>Самозанятость</h3>
+            <p>Статус самозанятого. Мы поможем оформить его бесплатно через приложение «Мой налог».</p>
+        </div>
+    </div>
+</section>
 
     <!-- VACANCIES -->
     <section id="vacancies" class="vacancies">
