@@ -1,6 +1,72 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Silktide Cookie Consent Manager -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #2aabee;
+  --backgroundColor: #ffffff;
+  --textColor: #333333;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 1px;
+  --iconColor: #2AABEE;
+  --iconBackgroundColor: #FFFFFF;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js" integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: { show: false },
+  icon: { position: "bottomRight" },
+  prompt: { position: "bottomRight" },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Основное",
+      description: "<p>Эти файлы cookie необходимы для корректной работы сайта и не могут быть отключены.</p>",
+      required: true
+    },
+    {
+      id: "analytics",
+      label: "Аналитика",
+      description: "<p>Эти файлы cookie помогают нам улучшать сайт, отслеживая, какие страницы наиболее популярны.</p>",
+      required: false,
+      onAccept: function() {
+        // Запуск Яндекс.Метрики
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(113185708, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+      }
+    },
+    {
+      id: "marketing",
+      label: "Маркетинг",
+      description: "<p>Эти файлы cookie используются для показа релевантной рекламы.</p>",
+      required: false
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>Мы используем файлы cookie для улучшения работы сайта.</p>",
+      acceptAllButtonText: "Принять все",
+      rejectNonEssentialButtonText: "Отклонить лишнее",
+      preferencesButtonText: "Настройки"
+    },
+    preferences: {
+      title: "Настройте свои предпочтения для cookie",
+      description: "<p>Мы уважаем ваше право на конфиденциальность.</p>",
+      saveButtonText: "Сохранить и закрыть"
+    }
+  }
+});
+</script>
+<!-- /Silktide Cookie Consent Manager -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css" integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/" crossorigin="anonymous">
 <style id="silktide-consent-manager-overrides">
