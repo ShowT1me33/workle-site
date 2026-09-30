@@ -865,75 +865,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        /* ===== COOKIE BANNER ===== */
-.cookie-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    border-top: 1px solid #E5E7EB;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
-    padding: 1.2rem 5%;
-    z-index: 1000;
-    display: none;
-}
-
-.cookie-banner.show {
-    display: block;
-}
-
-.cookie-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-}
-
-.cookie-content p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--text);
-    line-height: 1.5;
-}
-
-.cookie-content a {
-    color: #2AABEE;
-    text-decoration: underline;
-}
-
-.cookie-btn {
-    flex-shrink: 0;
-    background: #2AABEE;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.8rem;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.cookie-btn:hover {
-    background: #229ED9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(42, 171, 238, 0.4);
-}
-
-@media (max-width: 768px) {
-    .cookie-content {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-    }
-    
-    .cookie-btn {
-        width: 100%;
-    }
-}
+     
     </style>
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -1371,29 +1303,7 @@ document.querySelectorAll('.vacancy-btn').forEach(btn => {
         }
     });
 });
-        // Cookie Banner
-(function() {
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('cookie-accept');
     
-    // Проверяем, давал ли пользователь согласие
-    if (!localStorage.getItem('cookie_consent')) {
-        banner.classList.add('show');
-    }
-    
-    // Обработчик кнопки "Принять"
-    acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('cookie_consent', 'true');
-        banner.classList.remove('show');
-    });
-})();
     </script>
-    <!-- Cookie Banner -->
-<div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-        <p>Мы используем файлы cookie для улучшения работы сайта и анализа трафика. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</p>
-        <button id="cookie-accept" class="cookie-btn">Принять</button>
-    </div>
-</div>
 </body>
 </html>
